@@ -102,3 +102,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# R files to ignore
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
