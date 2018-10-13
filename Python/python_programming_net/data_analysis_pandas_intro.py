@@ -17,7 +17,7 @@ start = datetime.datetime(2017, 6, 1)
 end = datetime.datetime.now()
    
 df = web.DataReader("F", data_source="iex", start=start,end= end)
-df.head(10)
+df.head(20)
 print(df.head())
 
 df.to_csv('data/f_ohlc.csv', sep=',')
