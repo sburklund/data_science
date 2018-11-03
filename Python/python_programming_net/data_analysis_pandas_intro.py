@@ -24,4 +24,20 @@ df.to_csv('data/f_ohlc.csv', sep=',')
 
 df['high'].plot()
 plt.legend()
+#plt.show()
+
+df['open'].plot()
+plt.legend()
+plt.show()
+
+# Showing multiple figures without closing the first figure
+# https://stackoverflow.com/questions/7744697/how-to-show-two-figures-using-matplotlib
+f1 = plt.figure(1)
+df['high'].plot()
+plt.legend()
+
+f2 = plt.figure(2)
+df['open'].plot()
+plt.legend()
+
 plt.show()
