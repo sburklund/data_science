@@ -1,7 +1,8 @@
 import pandas as pd 
 import quandl 
 
-api_key = open('C:\\Users\\Scott Burklund\OneDrive - Preverity, Inc\\Personal\\data_science\\apikeys\\quandlapikey.txt', 'r').read()
+#api_key = open('C:\\Users\\Scott Burklund\OneDrive - Preverity, Inc\\Personal\\data_science\\apikeys\\quandlapikey.txt', 'r').read()
+api_key = open('C:/Users/Scott Burklund/OneDrive - Preverity, Inc/Personal/data_science/apikeys/quandlapikey.txt', 'r').read()
 
 df = quandl.get("FMAC/HPI_TX", authtoken = api_key)
 
