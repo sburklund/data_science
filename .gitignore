@@ -114,3 +114,6 @@ venv.bak/
 
 # key and api files
 apikeys/
+
+# data and large files
+data/
