@@ -116,4 +116,4 @@ venv.bak/
 apikeys/
 
 # data and large files
-*/data/
+data/
