@@ -57,8 +57,7 @@ london_data_2000.rename(
 
 # Save to Excel
 from pandas import ExcelWriter
-writer = pd.ExcelWriter(
-    'London_Sundays_2000.xlsx', engine=exel.writer) 
+writer = pd.ExcelWriter('London_Sundays_2000.xlsx') 
 london_data_2000.to_excel(writer, 'Sheet1') 
 writer.save() 
 
