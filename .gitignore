@@ -119,3 +119,5 @@ apikeys/
 data/
 .vscode/
 venv/
+global.lock
+purge.lock
