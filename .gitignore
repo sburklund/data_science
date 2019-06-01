@@ -117,3 +117,5 @@ apikeys/
 
 # data and large files
 data/
+.vscode/
+venv/
