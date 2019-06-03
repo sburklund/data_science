@@ -8,6 +8,13 @@
 
 import sqlalchemy as sa
 from sqlalchemy.orm import sessionmaker
+import os
+
+redshift_endpoint = os.getenv("REDSHIFT_ENDPOINT")
+redshift_user = os.getenv("REDSHIFT_USER")
+redshift_pass = os.getenv("REDSHIFT_PASS")
+port = 5439
+dbname = 'prod'
 
 #>>>>>>>> MAKE CHANGES HERE <<<<<<<<<<<<< 
 DATABASE = "dbname"
