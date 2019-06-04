@@ -8,6 +8,7 @@
 
 import sqlalchemy as sa
 from sqlalchemy.orm import sessionmaker
+import psycopg2
 import os
 
 redshift_endpoint = os.getenv("REDSHIFT_ENDPOINT")
@@ -21,11 +22,11 @@ DATABASE = "dbname"
 USER = "username"
 PASSWORD = "password"
 HOST = "host"
-PORT = ""
-SCHEMA = "public"      #default is "public" 
+PORT = "port"
+SCHEMA = "sburklund"      #default is "public" 
 
 ####### connection and session creation ############## 
-connection_string = "redshift+psycopg2://%s:%s@%s:%s/%s" % (USER,PASSWORD,HOST,str(PORT),DATABASE)
+connection_string = "redshift+psycopg2://%s:%s@%s:%s/%s" % (redshift_user,redshift_pass,redshift_endpoint,str(port),dbname)
 engine = sa.create_engine(connection_string)
 session = sessionmaker()
 session.configure(bind=engine)
@@ -35,8 +36,8 @@ s.execute(SetPath)
 ###### All Set Session created using provided schema  #######
 
 ################ write queries from here ###################### 
-query = "SELECT * FROM added_trip limit 2;"
-rr = s.execute(query)
+query = "select * from sburklund.nucc_compare;"
+rr = sa.execute(query)
 all_results =  rr.fetchall()
 
 def pretty(all_results):
