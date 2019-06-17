@@ -10,6 +10,7 @@ import sqlalchemy as sa
 from sqlalchemy.orm import sessionmaker
 import psycopg2
 import os
+import pprint as pretty
 
 redshift_endpoint = os.getenv("REDSHIFT_ENDPOINT")
 redshift_user = os.getenv("REDSHIFT_USER")
@@ -37,15 +38,15 @@ s.execute(SetPath)
 
 ################ write queries from here ###################### 
 query = "select * from sburklund.nucc_compare;"
-rr = sa.execute(query)
+rr = s.execute(query)
 all_results =  rr.fetchall()
 
 def pretty(all_results):
     for row in all_results :
-        print "row start >>>>>>>>>>>>>>>>>>>>"
+        print("row start >>>>>>>>>>>>>>>>>>>>")
         for r in row :
-            print " ----" , r
-        print "row end >>>>>>>>>>>>>>>>>>>>>>"
+            print(" ----" , r)
+        print("row end >>>>>>>>>>>>>>>>>>>>>>")
 
 
 pretty(all_results)
