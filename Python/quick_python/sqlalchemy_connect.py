@@ -46,8 +46,7 @@ def pretty(all_results):
         print("row start >>>>>>>>>>>>>>>>>>>>")
         for r in row :
             print(" ----" , r)
-        print("row end >>>>>>>>>>>>>>>>>>>>>>")
-
+            print("row end >>>>>>>>>>>>>>>>>>>>>>")
 
 pretty(all_results)
 
