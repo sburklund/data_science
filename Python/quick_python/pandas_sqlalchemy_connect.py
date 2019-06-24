@@ -12,16 +12,9 @@
 # sudo pip install pandas
 ##############################################
 
-import sqlalchemy as sa
-from sqlalchemy.orm import sessionmaker
-import psycopg2
-import os
-import pprint as pretty
-
-
 from sqlalchemy import create_engine
 import psycopg2
-import pandas as padas
+import pandas as pd
 import os
 
 redshift_endpoint = os.getenv("REDSHIFT_ENDPOINT")
@@ -31,5 +24,6 @@ port = 5439
 dbname = 'prod'
 
 engine = "redshift+psycopg2://%s:%s@%s:%s/%s" % (redshift_user,redshift_pass,redshift_endpoint,str(port),dbname)
-data_frame = padas.read_sql_query('SELECT * FROM sburklund.nucc_compare;', engine)
+data_frame = pd.read_sql_query('SELECT * FROM sburklund.nucc_compare;', engine)
 
+data_frame
