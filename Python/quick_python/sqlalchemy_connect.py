@@ -20,6 +20,7 @@ redshift_user = os.getenv("REDSHIFT_USER")
 redshift_pass = os.getenv("REDSHIFT_PASS")
 port = 5439
 dbname = 'prod'
+SCHEMA = "sburklund"      #default is "public" 
 
 #>>>>>>>> MAKE CHANGES HERE <<<<<<<<<<<<< 
 DATABASE = "dbname"
@@ -53,6 +54,7 @@ def pretty(all_results):
 
 pretty(all_results)
 
+print(all_results)
 
 ########## close session in the end ###############
 s.close()
