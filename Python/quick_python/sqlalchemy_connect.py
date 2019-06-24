@@ -1,3 +1,6 @@
+# source website
+# https://gist.github.com/varver/f6f1ad1a1cfd786f8e374d11fd3dbd4b
+
 ############ REQUIREMENTS ####################
 # sudo apt-get install python-pip 
 # sudo apt-get install libpq-dev
