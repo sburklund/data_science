@@ -1,6 +1,9 @@
 #
 #  Access your data in Amazon Redshift and PostgreSQL with Python and R
 #  https://www.blendo.co/blog/access-your-data-in-amazon-redshift-and-postgresql-with-python-and-r/?utm_medium=referral&utm_source=quora.com&utm_campaign=connect-to-redshift-using-python
+#
+#  Plot Data From Amazon Redshift in Python
+#  https://plot.ly/python/amazon-redshift/#psycopg2
 
 
 ############ REQUIREMENTS ####################
@@ -23,7 +26,6 @@ redshift_pass = os.getenv("REDSHIFT_PASS")
 port = 5439
 dbname = 'prod'
 
-# engine = "redshift+psycopg2://%s:%s@%s:%s/%s" % (redshift_user,redshift_pass,redshift_endpoint,str(port),dbname)
 engine_str = "redshift+psycopg2://%s:%s@%s:%s/%s" % (redshift_user,redshift_pass,redshift_endpoint,str(port),dbname)
 
 engine = create_engine(engine_str)
