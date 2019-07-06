@@ -28,9 +28,11 @@ data_frame = pd.read_sql_query('SELECT * FROM sburklund.nucc_compare;', engine)
 
 data_frame
 
-mx_data = pd.read_sql_query('select * from edw.mhx_claims limit 20;', engine)
+mx_data = pd.read_sql_query('select * from edw.mhx_claims limit 50;', engine)
 mx_data
 mx_data.count
+
+mx_data.groupby(['payer_plan_type']).count()
 
 ########## close session in the end ###############
 s.close()
