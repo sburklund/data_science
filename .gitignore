@@ -117,7 +117,9 @@ apikeys/
 
 # data and large files
 data/
+source_code/
 .vscode/
 venv/
 global.lock
 purge.lock
+*.png
