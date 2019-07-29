@@ -49,6 +49,30 @@ mx_data[['payer_plan_type', 'claim_txn_id']].groupby(['payer_plan_type']).count(
 
 
 #%%
+# ### List claim_txn_id
+print(mx_data[['claim_txn_id']])
+
+#%% [markdown]
+# ### Use Plotly for creating graphics
+# #### Note: As of 7/20/2019 need to use plotly.offline instead of plotly.plotly
+
+#%%
+#from __future__ import print_function #python 3 support
+
+import plotly.offline as py
+import plotly.graph_objs as go
+import plotly.tools as tls
+import requests
+
+#%% 
+
+mx_ppt = mx_data[['payer_plan_type', 'claim_txn_id']].groupby(['payer_plan_type']).count()
+mx_ppt
+mx_ppt.columns
+
+layout = go.Layout(title="Payer Plan Type", yaxis=dict(title="Count"))
+data = [go.Bar(x=mx_ppt.index, y=mx_ppt.claim_txn_id)]
+py.iplot(go.Figure(data=data, layout=layout))
 
 
-
+#%%
