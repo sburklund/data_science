@@ -32,7 +32,7 @@ engine = create_engine(engine_str)
 # show the first 5 rows of the data
 
 #%%
-mx_data = pd.read_sql_query('select * from edw.mhx_claims limit 50;', engine)
+mx_data = pd.read_sql_query('select * from edw.mhx_claims limit 100;', engine)
 mx_data.head()
 
 #%% [markdown]
@@ -62,7 +62,7 @@ print(mx_data[['claim_txn_id']])
 import plotly.offline as py
 import plotly.graph_objs as go
 import plotly.tools as tls
-import requests
+#import requests
 
 #%% 
 
