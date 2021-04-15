@@ -26,10 +26,13 @@ redshift_pass = os.getenv("REDSHIFT_PASS")
 port = 5439
 dbname = 'prod'
 
+# redshift_endpoint = "preverity-prod.c1klgawkvuni.us-east-1.redshift.amazonaws.com:5439/prod"
+#redshift_endpoint = "preverity-prod.c1klgawkvuni.us-east-1.redshift.amazonaws.com"
+
 engine_str = "redshift+psycopg2://%s:%s@%s:%s/%s" % (redshift_user,redshift_pass,redshift_endpoint,str(port),dbname)
 
 engine = create_engine(engine_str)
-data_frame = pd.read_sql_query('SELECT * FROM sburklund.nucc_compare;', engine)
+data_frame = pd.read_sql_query('select * from edw.mhx_counts_yearly order by service_year;', engine)
 
 data_frame
 
@@ -41,4 +44,4 @@ mx_data.groupby(['payer_plan_type']).count()
 mx_data[['payer_plan_type', 'claim_txn_id']].groupby(['payer_plan_type']).count()
 
 ########## close session in the end ###############
-s.close()
+#s.close()
